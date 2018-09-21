@@ -7,6 +7,12 @@ void setup()
 void draw()
 {
 	//your code here
+  background(255);
+  for(int x = 15; x < 470; x = x + 60)
+  { 
+    Die kam = new Die(x, 15);
+    kam.display();
+  }
 }
 void mousePressed()
 {
@@ -30,47 +36,90 @@ class Die //models one single dice cube
 		//your code here
     if (dSide == 1)
     {
-      stroke(2);
-      point(xPos, yPos);
+      strokeWeight(6);
+      point(xPos + 25, yPos + 25);
     } 
     else if (dSide == 2)
     {
-      stroke(2);
-      point(xPos - 5, yPos - 5);
-      point(xPos + 5, yPos + 5);
+      strokeWeight(6);
+      point(xPos + 15, yPos + 15);
+      point(xPos + 25, yPos + 25);
     }
     else if (dSide == 3)
     {
-      stroke(2);
-      point(xPos - 3, yPos - 3);
-      point(xPos, yPos);
-      point(xPos + 3, yPos + 3);
+      strokeWeight(6);
+      point(xPos + 10, yPos + 10);
+      point(xPos + 25, yPos + 25);
+      point(xPos + 40, yPos + 40);
     }
     else if (dSide == 4)
     {
-      stroke(2);
-      point(xPos - 3, yPos - 3);
-      point(xPos, yPos);
-      point(xPos + 3, yPos + 3);
-      point(xPos, yPos);
+      strokeWeight(6);
+      point(xPos + 10, yPos + 10);
+      point(xPos + 40 , yPos + 10);
+      point(xPos + 10, yPos + 40);
+      point(xPos + 40, yPos + 40);
     }
     else if (dSide == 5)
     {
-      
+      strokeWeight(6);
+      point(xPos + 10, yPos + 10);
+      point(xPos + 40 , yPos + 10);
+      point(xPos + 25, yPos + 25);
+      point(xPos + 10, yPos + 40);
+      point(xPos + 40, yPos + 40);
     }
     else if (dSide == 6)
     {
-      
+      strokeWeight(6);
+      point(xPos + 10, yPos + 10);
+      point(xPos + 10 , yPos + 25);
+      point(xPos + 10, yPos + 40);
+      point(xPos + 40, yPos + 10);
+      point(xPos + 40, yPos + 25);
+      point(xPos + 40, yPos + 40);
     }
 	}
 
-	void display()
-	{
+	void display() {
 		//your code here
-    noStroke();
-    fill((float)(Math.random()*255),(float)(Math.random()*255),(float)(Math.random()*255),);
-    rect(xPos, yPos, 35, 35, 5);
-    roll();
-    
-	}
+    strokeWeight(2);
+    fill((float)(Math.random()*255),(float)(Math.random()*255),(float)(Math.random()*255));
+    rect(xPos, yPos, 50, 50, 5);
+    dSide = (int)(Math.random()*6+1);
+    if (dSide == 1) {
+      strokeWeight(6);
+      point(xPos + 25, yPos + 25);
+    } else if (dSide == 2) {
+      strokeWeight(6);
+      point(xPos + 15, yPos + 15);
+      point(xPos + 35, yPos + 35);
+    } else if (dSide == 3) {
+      strokeWeight(6);
+      point(xPos + 10, yPos + 10);
+      point(xPos + 25, yPos + 25);
+      point(xPos + 40, yPos + 40);
+    } else if (dSide == 4) {
+      strokeWeight(6);
+      point(xPos + 10, yPos + 10);
+      point(xPos + 40 , yPos + 10);
+      point(xPos + 10, yPos + 40);
+      point(xPos + 40, yPos + 40);
+    } else if (dSide == 5) {
+      strokeWeight(6);
+      point(xPos + 10, yPos + 10);
+      point(xPos + 40 , yPos + 10);
+      point(xPos + 25, yPos + 25);
+      point(xPos + 10, yPos + 40);
+      point(xPos + 40, yPos + 40);
+    } else if (dSide == 6) {
+      strokeWeight(6);
+      point(xPos + 10, yPos + 10);
+      point(xPos + 10 , yPos + 25);
+      point(xPos + 10, yPos + 40);
+      point(xPos + 40, yPos + 10);
+      point(xPos + 40, yPos + 25);
+      point(xPos + 40, yPos + 40);
+    }
+  }
 }
